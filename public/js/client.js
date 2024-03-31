@@ -74,31 +74,45 @@ function loadNewSkinPage() {
   const skinCardsContainer = document.createElement("div");
   skinCardsContainer.classList.add("skin-card-container");
 
-  // 👉 fetch cards data
-  // Fetch JSON data from the specified URL ("/json/new-skins.json")
-  fetch("/json/new-skins.json")
-    // When the response is received, parse it as JSON
-    .then((res) => res.json())
-    // Once the JSON data is parsed, handle it in the next 'then' block
-    .then((res) => {
-      // Check if the response is valid JSON and is an array
-      if (!res || !Array.isArray(res)) return;
-      // Iterate over each item in the array
-      res.forEach((item) => {
-        // Create a skin card using the provided data and a function called 'createSkinCards'
-        const card = createSkinCards(
-          item.image,
-          item.name,
-          item.model,
-          item.price,
-          item.motto
-        );
-        // Append the created skin card to the 'skinCardsContainer'
-        skinCardsContainer.appendChild(card);
-      });
-    })
-    // Catch any errors that occur during the fetching or processing of JSON data
-    .catch((err) => {});
+  // Create a new XMLHttpRequest object
+  const xhr = new XMLHttpRequest();
+
+  // Define the callback function to handle the response
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        // Parse the response as JSON
+        const res = JSON.parse(xhr.responseText);
+
+        // Check if the response is valid JSON and is an array
+        if (Array.isArray(res)) {
+          // Iterate over each item in the array
+          res.forEach((item) => {
+            // Create a skin card using the provided data and a function called 'createSkinCards'
+            const card = createSkinCards(
+              item.image,
+              item.name,
+              item.model,
+              item.price,
+              item.motto
+            );
+
+            // Append the created skin card to the 'skinCardsContainer'
+            skinCardsContainer.appendChild(card);
+          });
+        }
+      } else {
+        // Handle errors (e.g., non-200 status codes)
+        console.error("Error fetching data:", xhr.statusText);
+      }
+    }
+  };
+
+  // Open a GET request to the specified URL
+  xhr.open("GET", "/json/new-skins.json", true);
+
+  // Send the request
+  xhr.send();
 
   // Append the 'skinCardsContainer' to the 'app' element in the DOM
   app.appendChild(skinCardsContainer);
@@ -152,23 +166,45 @@ function loadNewItemPage() {
   const itemCardsContainer = document.createElement("div");
   itemCardsContainer.classList.add("item-card-container");
 
-  // 👉 fetch cards data
-  fetch("/json/new-items.json")
-    .then((res) => res.json())
-    .then((res) => {
-      if (!res || !Array.isArray(res)) return;
-      res.forEach((item) => {
-        const card = createItemCards(
-          item.image,
-          item.name,
-          item.model,
-          item.price,
-          item.motto
-        );
-        itemCardsContainer.appendChild(card);
-      });
-    })
-    .catch((err) => {});
+  // Create a new XMLHttpRequest object
+  const xhr = new XMLHttpRequest();
+
+  // Define the callback function to handle the response
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        // Parse the response as JSON
+        const res = JSON.parse(xhr.responseText);
+
+        // Check if the response is valid JSON and is an array
+        if (Array.isArray(res)) {
+          // Iterate over each item in the array
+          res.forEach((item) => {
+            // Create an item card using the provided data and a function called 'createItemCards'
+            const card = createItemCards(
+              item.image,
+              item.name,
+              item.model,
+              item.price,
+              item.motto
+            );
+
+            // Append the created item card to the 'itemCardsContainer'
+            itemCardsContainer.appendChild(card);
+          });
+        }
+      } else {
+        // Handle errors (e.g., non-200 status codes)
+        console.error("Error fetching data:", xhr.statusText);
+      }
+    }
+  };
+
+  // Open a GET request to the specified URL
+  xhr.open("GET", "/json/new-items.json", true);
+
+  // Send the request
+  xhr.send();
 
   app.appendChild(itemCardsContainer);
 }
