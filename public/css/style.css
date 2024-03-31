@@ -1,0 +1,113 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("/images/fortnite-chapter-3-season-1-flipped-3840x2160-27429dc20c19.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+  padding: 0px;
+  margin: 0px;
+}
+footer {
+  background-color: rgba(56, 8, 8, 0.37);
+  color: aliceblue;
+  position: fixed;
+  height: 100px;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10%;
+  padding-right: 10%;
+  background-color: rgba(43, 63, 56, 0.384);
+}
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 20px;
+}
+
+nav ul li a {
+  color: rgb(62, 21, 95);
+  text-decoration: none;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.container {
+  align-items: center;
+  font-size: large;
+  font-weight: bold;
+}
+
+.end {
+  position: relative;
+  top: 40px;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* 👉 skin cards */
+.skin-card {
+  height: 400px;
+  width: 250px;
+  background-color: rgba(255, 255, 255, 0.358);
+  border-radius: 30px;
+  box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.358);
+  border: 1px solid rgba(255, 255, 255, 0.526);
+  display: flex;
+  padding: 20px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.skin-card-container {
+  padding-top: 30px;
+  display: flex;
+  flex: 1, 1, auto;
+  justify-content: space-evenly;
+}
+
+.news-iframe {
+  width: 100%;
+  height: calc(100vh - 80px);
+  border: none;
+}
+
+/* 👉 item cards */
+.item-card {
+  height: 400px;
+  width: 250px;
+  background-color: rgba(255, 255, 255, 0.358);
+  border-radius: 30px;
+  box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.358);
+  border: 1px solid rgba(255, 255, 255, 0.526);
+  display: flex;
+  padding: 20px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.item-card-container {
+  padding-top: 30px;
+  display: flex;
+  flex: 1, 1, auto;
+  justify-content: space-evenly;
+}

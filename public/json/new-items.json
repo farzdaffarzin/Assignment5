@@ -1,0 +1,43 @@
+[
+    {
+        "image" : "/images/fortnite-glacier-electric-guitar.png",
+        "name" : "glacier electric",
+        "model" : "pickaxe",
+        "price" : 500,
+        "moto" : "a cool blue choice for chilling riffs"
+    },
+
+    {
+        "image" :"/images/fortnite-evil-plan-emote.png",
+        "name" : "evil plan",
+        "model" : "dance",
+        "price" : 500,
+        "moto" : "show them you are ready to go"
+    },
+
+    {
+        "image" : "/images/fortnite-drumsticks-pickaxe.png",
+        "name" : "drumsticks",
+        "model" : "Sticker",
+        "price" : 800,
+        "moto" : "Drumroll please..."
+    },
+
+    {
+        "image" : "/images/fortnite-bullseye-board-pickaxe.png",
+        "name" : "Bullseye board",
+        "model" : "pickaxe",
+        "price" : 800,
+        "moto" : "Get the perfect shot... even without a bow"
+    },
+
+    {
+        "image" :"/images/fortnite-peter-griffin-speed-bag-emote.png",
+        "name" : "peter griffin speed bag",
+        "model" : "dance",
+        "price" : 500,
+        "moto" : "prepare for the next fight"
+    }
+
+
+]

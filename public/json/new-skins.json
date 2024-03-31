@@ -1,0 +1,37 @@
+[
+    {
+        "image": "/images/fortnite-tex-flamingo-outfit.png",
+        "name": "tex flamingo",
+        "model": "lego",
+        "price": 1200,
+        "motto": "the long wing of the law"
+    },
+    {
+        "image": "/images/fortnite-sgt-drake-lego-outfit.png",
+        "name": "sgt.drake",
+        "model": "lego and normal",
+        "price": 1200,
+        "motto": "proud soldier of the never-ending bird skimish"
+    },
+    {
+        "image": "/images/fortnite-mystery-zone-outfit.png",
+        "name": "Mystery zone",
+        "model": "lego and normal",
+        "price": 800,
+        "motto": "love yourself to the mystery "
+    },
+    {
+        "image": "/images/fortnite-budge-outfit.png",
+        "name": "budge",
+        "model": "lego and normal",
+        "price": 1200,
+        "motto": "never budgie on your quest for justice"
+    },
+    {
+        "image": "/images/fortnite-the-giant-chicken-outfit.png",
+        "name": "The giant chicken",
+        "model": "normal",
+        "price": 1500,
+        "motto": "Always ready for another fight"
+    }
+]
