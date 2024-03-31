@@ -10,16 +10,16 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
   </head>
-  <body onload="detectPageToRender()">
+  <body>
     <div class="navbar">
       <nav>
         <h2>Welcome</h2>
         <ul>
-          <li><a href="?page=home">Home</a></li>
-          <li><a href="/?page=new-skin">New Skins</a></li>
-          <li><a href="?page=new-item">New items</a></li>
-          <li><a href="/?page=news">News</a></li>
-          <li><a href="?page=chapter-info">chapter information</a></li>
+          <li><button onclick="pageToRender('home')">Home</button></li>
+          <li><button onclick="pageToRender('new-skin')">New Skins</button></li>
+          <li><button onclick="pageToRender('new-item')">New items</button></li>
+          <li><button onclick="pageToRender('news')">News</butt></li>
+          <li><button onclick="pageToRender('chapter-info')">chapter information</button></li>
         </ul>
       </nav>
     </div>
@@ -29,7 +29,7 @@
     <footer id="app-footer">
       <span class="end">
         <i class="bi bi-c-circle"></i>
-       Coopyright, Farzad 2024
+        Coopyright, Farzad 2024
       </span>
     </footer>
 

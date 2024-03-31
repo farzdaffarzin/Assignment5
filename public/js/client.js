@@ -15,21 +15,26 @@ function ajaxGet(url, callback) {
         callback(xhr.responseText);
       } else {
         // If the status is not 200, log an error message with the status code
-        console.error('Error fetching data:', xhr.status);
+        console.error("Error fetching data:", xhr.status);
       }
     }
   };
 
   // Initialize the request with the HTTP GET method, the provided URL, and asynchronous flag set to true
-  xhr.open('GET', url, true);
+  xhr.open("GET", url, true);
 
   // Send the XMLHttpRequest
   xhr.send();
 }
 
-
 // 👀 new skins start
-function createSkinCards(imageAddress, skinName, skinModel, skinPrice, skinMotto) {
+function createSkinCards(
+  imageAddress,
+  skinName,
+  skinModel,
+  skinPrice,
+  skinMotto
+) {
   // 👉 creating image
   const image = document.createElement("img");
   image.style.width = "100px";
@@ -77,8 +82,7 @@ function loadNewSkinPage() {
     // Once the JSON data is parsed, handle it in the next 'then' block
     .then((res) => {
       // Check if the response is valid JSON and is an array
-      if (!res || !Array.isArray(res))
-       return;
+      if (!res || !Array.isArray(res)) return;
       // Iterate over each item in the array
       res.forEach((item) => {
         // Create a skin card using the provided data and a function called 'createSkinCards'
@@ -94,16 +98,21 @@ function loadNewSkinPage() {
       });
     })
     // Catch any errors that occur during the fetching or processing of JSON data
-    .catch((err) => { });
+    .catch((err) => {});
 
   // Append the 'skinCardsContainer' to the 'app' element in the DOM
   app.appendChild(skinCardsContainer);
-
 }
 // 👀 new skins end
 
 // 👀 new items start
-function createItemCards(imageAddress, itemName, itemModel, itemPrice, itemMotto) {
+function createItemCards(
+  imageAddress,
+  itemName,
+  itemModel,
+  itemPrice,
+  itemMotto
+) {
   // 👉 creating image
   const image = document.createElement("img");
   image.style.width = "100px";
@@ -159,7 +168,7 @@ function loadNewItemPage() {
         itemCardsContainer.appendChild(card);
       });
     })
-    .catch((err) => { });
+    .catch((err) => {});
 
   app.appendChild(itemCardsContainer);
 }
@@ -193,13 +202,10 @@ function loadChapterInfoPage() {
 }
 // 👀 chapter-info start
 
-function detectPageToRender() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const currentParam = urlParams.get("page");
-
-  if (currentParam.toLowerCase() === "new-skin") loadNewSkinPage();
-  else if (currentParam.toLowerCase() === "news") loadNewsPage();
-  else if (currentParam.toLowerCase() === "new-item") loadNewItemPage();
-  else if (currentParam.toLowerCase() === "chapter-info") loadChapterInfoPage();
-
+function pageToRender(page) {
+  app.innerHTML = "";
+  if (page.toLowerCase() === "new-skin") loadNewSkinPage();
+  else if (page.toLowerCase() === "news") loadNewsPage();
+  else if (page.toLowerCase() === "new-item") loadNewItemPage();
+  else if (page.toLowerCase() === "chapter-info") loadChapterInfoPage();
 }
